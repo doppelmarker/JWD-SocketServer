@@ -36,12 +36,12 @@ public class ServerThread extends Thread {
                 handler.handle(reader, writer);
             }
         } catch (Exception e) {
-            System.err.println("Internal server exception: " + e.getMessage());
+            System.out.println("Internal server exception: " + e.getMessage());
         } finally {
             try {
                 close();
             } catch (IOException e) {
-                System.err.println("Error closing socket/reader/writer: " + e.getMessage());
+                System.out.println("Error closing socket/reader/writer: " + e.getMessage());
             }
         }
     }

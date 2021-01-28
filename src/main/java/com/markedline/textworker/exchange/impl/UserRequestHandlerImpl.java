@@ -29,9 +29,9 @@ public class UserRequestHandlerImpl implements UserRequestHandler {
         try {
             command = (String) reader.readObject();
         } catch (IOException e) {
-            System.err.println("Error receiving command: " + e.getMessage());
+            System.out.println("Error receiving command: " + e.getMessage());
         } catch (ClassNotFoundException e) {
-            System.err.println("Command's class is not String: " + e.getMessage());
+            System.out.println("Command's class is not String: " + e.getMessage());
         }
         return command;
     }
@@ -41,9 +41,9 @@ public class UserRequestHandlerImpl implements UserRequestHandler {
         try {
             inputData = (AbstractInputData) reader.readObject();
         } catch (IOException e) {
-            System.err.println("Error receiving input data: " + e.getMessage());
+            System.out.println("Error receiving input data: " + e.getMessage());
         } catch (ClassNotFoundException e) {
-            System.err.println("Class of input data is not AbstractInputData or its child: " + e.getMessage());
+            System.out.println("Class of input data is not AbstractInputData or its child: " + e.getMessage());
         }
         return inputData;
     }
@@ -52,7 +52,7 @@ public class UserRequestHandlerImpl implements UserRequestHandler {
         try {
             writer.writeObject(result);
         } catch (IOException e) {
-            System.err.println("Error sending result: " + e.getMessage());
+            System.out.println("Error sending result: " + e.getMessage());
         }
     }
 }

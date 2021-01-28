@@ -12,6 +12,10 @@ import java.util.List;
 
 public class ParserImpl implements Parser {
 
+    private static final String REGEX_MULTIPLE_WHITESPACE_OR_TABS_FOR_REPLACEMENT = "[ |\\t]+";
+    private static final String REGEX_WHITESPACE_REPLACEMENT = " ";
+    private static final String REGEX_SPLIT_SENTENCE_INTO_PARTS_BY = " ";
+
     @Override
     public List<Sentence> getSentences(String text) {
         List<Sentence> sentences = new ArrayList<>();
@@ -35,8 +39,9 @@ public class ParserImpl implements Parser {
     public List<Word> getWordsFromText(String text) {
         List<Word> words = new ArrayList<>();
 
-        String processedText = text.trim().replaceAll("[ |\\t]+", " ");
-        String[] sentenceParts = processedText.split(" ");
+        String processedText = text.trim().
+                replaceAll(REGEX_MULTIPLE_WHITESPACE_OR_TABS_FOR_REPLACEMENT, REGEX_WHITESPACE_REPLACEMENT);
+        String[] sentenceParts = processedText.split(REGEX_SPLIT_SENTENCE_INTO_PARTS_BY);
 
         int firstLetterIndex, lastLetterIndex;
 

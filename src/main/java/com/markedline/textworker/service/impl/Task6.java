@@ -9,7 +9,6 @@ import com.markedline.textworker.entity.inputdata.AbstractInputData;
 import com.markedline.textworker.entity.result.AbstractResult;
 import com.markedline.textworker.service.TaskService;
 import com.markedline.textworker.entity.result.StringResult;
-import com.markedline.textworker.util.TextBuilder;
 
 import java.util.List;
 
