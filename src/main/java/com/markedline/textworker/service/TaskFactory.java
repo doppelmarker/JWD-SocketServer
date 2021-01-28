@@ -2,7 +2,7 @@ package com.markedline.textworker.service;
 
 import com.markedline.textworker.service.impl.*;
 
-public class TaskFactory {
+public final class TaskFactory {
 
     public static TaskService createTask(String command) {
         return switch (command) {
